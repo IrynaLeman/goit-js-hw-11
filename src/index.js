@@ -75,7 +75,7 @@ async function loadMore() {
 }
 
 function insertMarkup(picturesArray) {
-  const galleryMarkup = picturesArray.hits
+  const markup = picturesArray.hits
     .map(({ webformatURL, largeImageURL, tags, views, downloads, likes, comments }) => {
       return `<div class="photo-card">
                 <a href="${largeImageURL}"><img src="${webformatURL}" alt="${tags}" class="photo-img" loading="lazy" /></a>
@@ -97,5 +97,5 @@ function insertMarkup(picturesArray) {
     })
     .join('');
 
-  refs.galleryBlock.insertAdjacentHTML('beforeend', galleryMarkup);
+  refs.galleryBlock.insertAdjacentHTML('beforeend', markup);
 }
